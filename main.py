@@ -46,3 +46,9 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+def is_valid_email(self, email):
+        """A basic email validation using regular expression."""
+        # This regex is a simplified version. For more robust validation,
+        # you might consider more complex patterns or using a dedicated library.
+        email_regex = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        return re.match(email_regex, email) is not None
