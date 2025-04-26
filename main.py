@@ -52,3 +52,55 @@ def is_valid_email(self, email):
         # you might consider more complex patterns or using a dedicated library.
         email_regex = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         return re.match(email_regex, email) is not None
+        class BankOperator:
+    # ... (rest of your __init__, is_valid_email, create_user, list_users, get_user_by_index functions remain the same) ...
+
+    def create_account(self):
+        users = self.list_users()
+        if users:
+            user = self.get_user_by_index(users)
+            if user:
+                console.print(f"[green]Creating account for user: {user['name']} ({user['email']})[/green]")
+                # ... your create_account logic ...
+            else:
+                console.print("[red]Invalid user selection.\n[/red]")
+        else:
+            console.print("[yellow]Please create a user first.[/yellow]")
+
+    def deposit_money(self):
+        users = self.list_users()
+        if users:
+            user = self.get_user_by_index(users)
+            if user:
+                console.print(f"[green]Depositing money for user: {user['name']} ({user['email']})[/green]")
+                # ... your deposit logic ...
+            else:
+                console.print("[red]Invalid user selection.\n[/red]")
+        else:
+            console.print("[yellow]No users to deposit to.[/yellow]")
+
+    def withdraw_money(self):
+        users = self.list_users()
+        if users:
+            user = self.get_user_by_index(users)
+            if user:
+                console.print(f"[green]Withdrawing money for user: {user['name']} ({user['email']})[/green]")
+                # ... your withdrawal logic ...
+            else:
+                console.print("[red]Invalid user selection.\n[/red]")
+        else:
+            console.print("[yellow]No users to withdraw from.[/yellow]")
+
+    def view_transactions(self):
+        users = self.list_users()
+        if users:
+            user = self.get_user_by_index(users)
+            if user:
+                console.print(f"[green]Viewing transactions for user: {user['name']} ({user['email']})[/green]")
+                # ... your view transactions logic ...
+            else:
+                console.print("[red]Invalid user selection.\n[/red]")
+        else:
+            console.print("[yellow]No users to view transactions for.[/yellow]")
+
+bank_operator = BankOperator()
